@@ -1,0 +1,93 @@
+
+ <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Control Panel with Diagram</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="ajax.js"></script>
+        <style>
+body{
+    text-align: center;
+}
+controlPanel { margin: 20px auto;
+            width: 640px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}
+controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;}
+button {
+            padding: 10px 20px;
+            background-color: #6a67ce;
+            color: #ffffff;
+            border: 0;
+            border-radius: 5px;
+            font-size: 16px;
+}
+#stop{
+    position: relative;
+    margin-top: 3%;
+    background-color: rgb(187, 144, 144);
+}
+#left{
+    position: relative;
+    margin-top: 3%;
+    margin-right: 3%;
+}
+#right{
+    position: relative;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+#backward{
+    position: relative;
+    margin-top: 3%;
+}
+.leftside, .rightside{
+    width: 100%;
+}
+.leftside{
+    margin-top: 6%;
+}
+canvas{
+  position: relative;
+            width: 600px;
+            height: 600px;
+            background-color: #f2f2f2;
+            border: 1px solid #cccccc;
+}
+
+        </style>
+</head>
+
+<body>
+    <div class="row no-gutters">
+        <div class="col no-gutters">
+            <div class="leftside">
+                <button onclick="ff(300,290)" id="forward" name="button" value="f">forward</button><br> <!--(Diagram size/2 , Diagram size/2 - 10) 
+                    to keep the x-axis as it is and, on the other hand, move the y-axis to the north by -10 -->
+                <button onclick="lf(290,300)" id="left" name="button" value="l">left</button>
+                <button id="stop" name="button" value="s">stop</button>
+                <button onclick="rf(310,300)" id="right" name="button" value="r">right</button><br>
+                <button onclick="bf(300,310)" id="backward" name="button" value="b">backward</button>
+            </div>
+        </div>
+
+        <div class="col no-gutters">
+          <div class="controlPanel">
+            <div class="controls">
+            <div class="rightside">
+               <br>
+                <canvas id="myCanvas" width="600" height="600"></canvas> <!--Diagram size-->
+            </div>
+        </div>
+    </div>
+  </div> </div>
+    <script src="javascript.js"></script>
+</body>
+
+</html>
